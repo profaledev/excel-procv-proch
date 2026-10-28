@@ -133,3 +133,36 @@
 | 98 | 14 | 1 | 18/11/2023 |
 | 99 | 10 | 4 | 19/11/2023 |
 | 100 | 13 | 2 | 19/11/2023 |
+
+--
+Com as duas tabelas (`produtos` e `vendas`) importadas no Excel, passe os seguintes desafios técnicos para os alunos:
+
+### Desafio 1: O "INNER JOIN" do Excel (PROCV)
+Na planilha de **Vendas**, os alunos devem criar três novas colunas ao lado dos dados importados: `Nome do Produto`, `Categoria` e `Preço Unitário`.
+* **Fórmula para Nome do Produto:** 
+
+* **Fórmula para Categoria:** 
+ 
+* **Fórmula para Preço Unitário:** 
+
+
+*Objetivo:* Mostrar que o PROCV pega a chave estrangeira (ID) da tabela filha e busca os dados completos na matriz da tabela pai.
+
+### Desafio 2: Cálculos e Formatação de Moeda
+1. Crie uma quarta coluna chamada `Valor Total da Venda`.
+2. A fórmula será matemática básica: `=[@[quantidade]] * [@[Preço Unitário]]`.
+3. Aplique a formatação de **Moeda (R$)** ou **Contábil** nas colunas de *Preço* e *Valor Total*.
+
+### Desafio 3: Formatação Condicional (Indicadores Visuais)
+Para analisar as vendas, aplique regras visuais na coluna `Valor Total da Venda`:
+1. Selecione toda a coluna de Totais.
+2. Vá em **Página Inicial > Formatação Condicional > Regras de Realce das Células > É Maior Do Que...**
+3. Configure para que todas as vendas **maiores que R$ 1.000,00** fiquem com **Preenchimento Verde e Texto Verde Escuro** (Vendas de Alto Valor).
+4. Crie uma segunda regra para vendas **menores que R$ 100,00** ficarem com **Preenchimento Vermelho Claro** (Vendas de Baixo Valor).
+
+### Desafio 4 (Bônus Avançado): Relatório Gerencial com SOMASES
+Em uma terceira aba, crie um pequeno relatório de faturamento por Categoria:
+1. Digite o nome das categorias em uma coluna (Informática, Móveis, Papelaria, Eletrônicos, Acessórios).
+2. Ao lado, use a função `=SOMASE()` ou `=SOMASES()` para somar o "Valor Total da Venda" condicionado à "Categoria".
+   Exemplo de Sintaxe:
+   `=SOMASE(Vendas!F:F; "Informática"; Vendas!H:H)` *(Supondo que F seja a categoria e H o total).*
